@@ -1,0 +1,23 @@
+@use '../abstracts/' as *;
+
+.button {
+    cursor: pointer;
+    border: 0;
+    text-transform: uppercase;
+    font-weight: $fw-700;
+    color: getColor(neutral, 100); //$clr-neutral-100;
+    background-color: getColor(primary, 400); //$clr-primary-400;
+    padding: 1em 1.5em;
+
+    justify-self: center;
+
+    &[data-type="inverted"] { // kann auch mit zum Beispiel einer Utilitie-Klasse gelöst werden (&--inverted)
+        color: getColor(primary, 400); //$clr-primary-400;
+        background-color: getColor(neutral, 100); //$clr-neutral-100;
+    }
+
+    &:hover, &:focus {
+        color: getColor(neutral, 100); //$clr-neutral-100;
+        background-color: rgb(getColor(neutral, 900), 0.7);
+    }
+}
